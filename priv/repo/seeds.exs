@@ -22,3 +22,7 @@ Repo.insert!(%User{
 Repo.insert!(%User{
   name: "Chris", username: "mccord"
 })
+
+for u <- Repo.all(User) do
+  Repo.update!(User.registration_changeset(u, %{password: "temppass"}))
+end
