@@ -13,16 +13,21 @@ alias Rumbl.Repo
 alias Rumbl.Accounts.User
 Repo.insert!(%User{
   name: "José", username: "josevalim"
-})
+}, on_conflict: :nothing)
 
 Repo.insert!(%User{
   name: "Bruce", username: "redrapids"
-})
+}, on_conflict: :nothing)
 
 Repo.insert!(%User{
   name: "Chris", username: "mccord"
-})
+}, on_conflict: :nothing)
 
 for u <- Repo.all(User) do
   Repo.update!(User.registration_changeset(u, %{password: "temppass"}))
+end
+
+alias Rumbl.Multimedia
+for category <- ~w(Action Drama Romance Comedy Sci-fi) do
+  Multimedia.create_category!(category)
 end

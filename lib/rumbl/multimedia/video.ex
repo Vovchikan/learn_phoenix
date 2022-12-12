@@ -18,5 +18,6 @@ defmodule Rumbl.Multimedia.Video do
     video
     |> cast(attrs, [:url, :title, :desctiption, :category_id])
     |> validate_required([:url, :title, :desctiption])
+    |> assoc_constraint(:category)
   end
 end
