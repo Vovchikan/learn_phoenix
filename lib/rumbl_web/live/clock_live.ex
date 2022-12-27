@@ -5,8 +5,8 @@ defmodule RumblWeb.ClockLive do
   def render(assigns) do
     ~L"""
     <div>
-    <h2>Date:  <%= strftime(@date, "%d-%m-%Y" ) %></h2>
-    <h2>Time:  <%= strftime(@time, "%X" ) %></h2>
+      <h2>Date:  <%= strftime(@date, "%d-%m-%Y" ) %></h2>
+      <h2>Time:  <%= strftime(@time, "%X" ) %></h2>
     </div>
     """
   end
