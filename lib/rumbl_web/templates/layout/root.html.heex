@@ -27,6 +27,7 @@
             <% end %>
             <li><%= link "Home", to: Routes.page_path(@conn, :index) %></li>
             <li><%= link "Clock", to: Routes.live_path(@conn, RumblWeb.ClockLive) %></li>
+            <li><%= link "Counter", to: Routes.live_path(@conn, RumblWeb.CounterLive) %></li>
           </ul>
         </nav>
         <a href="https://phoenixframework.org/" class="phx-logo">

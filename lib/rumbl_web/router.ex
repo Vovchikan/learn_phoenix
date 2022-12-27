@@ -24,6 +24,7 @@ defmodule RumblWeb.Router do
     resources "/videos", VideoController
     live "/welcome", WelcomeLive
     live "/clock", ClockLive
+    live "/counter", CounterLive
   end
 
   # Other scopes may use custom stacks.
