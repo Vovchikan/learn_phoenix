@@ -15,6 +15,12 @@ defmodule RumblWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", RumblWeb do
+    pipe_through :api
+
+    resources "/users", Api.UserController, only: [:show, :index]
+  end
+
   scope "/", RumblWeb do
     pipe_through :browser
 
